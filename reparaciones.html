@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reparaciones - GUTICELL</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f4f6f9;
+      color: #333;
+    }
+    header {
+      background: #0a3d62;
+      color: #fff;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo img {
+      height: 50px;
+      width: auto;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav ul li a {
+      color: #fff;
+      font-weight: 500;
+      transition: color 0.3s;
+      text-decoration: none;
+    }
+    nav ul li a:hover { color: #f39c12; }
+
+    /* ====== SECCIÓN SERVICIOS ====== */
+    .services {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .services h1 {
+      font-size: 2.5em;
+      color: #0a3d62;
+      margin-bottom: 20px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      padding: 20px;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 18px rgba(0,0,0,0.2);
+    }
+    .card h3 {
+      color: #0a3d62;
+      margin-bottom: 10px;
+    }
+    .card p {
+      color: #555;
+    }
+
+    /* ====== PROCESO ====== */
+    .process {
+      background: #fff;
+      padding: 40px 20px;
+      margin: 40px 0;
+      text-align: center;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+    .process h2 {
+      font-size: 2em;
+      color: #0a3d62;
+      margin-bottom: 20px;
+    }
+    .steps {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+    .step {
+      flex: 1 1 200px;
+      background: #f39c12;
+      color: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+    .step:hover { transform: scale(1.05); }
+    .step h3 { margin: 0 0 10px; }
+
+    /* ====== TABLA DE PRECIOS ====== */
+    .prices {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .prices h2 {
+      font-size: 2em;
+      color: #0a3d62;
+      margin-bottom: 20px;
+    }
+    table {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      background: #fff;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+    table th, table td {
+      padding: 15px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+    table th {
+      background: #0a3d62;
+      color: #fff;
+    }
+    table tr:hover { background: #f9f9f9; }
+
+    /* ====== BOTÓN ====== */
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: #f39c12;
+      color: #fff;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: background 0.3s;
+      text-decoration: none;
+    }
+    .btn:hover { background: #e67e22; }
+
+    /* ====== RESPONSIVO ====== */
+    @media (max-width: 768px) {
+      .steps { flex-direction: column; }
+      .services h1, .process h2, .prices h2 { font-size: 1.8em; }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <img src="logo/GUTICELL.png" alt="Logo GUTICELL">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="telefonos.html">Teléfonos</a></li>
+        <li><a href="accesorios.html">Accesorios</a></li>
+        <li><a href="reparaciones.html">Reparaciones</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- SERVICIOS -->
+  <section class="services">
+    <h1>Servicios de Reparación</h1>
+    <div class="cards">
+      <div class="card">
+        <h3>Cambio de Pantalla</h3>
+        <p>Reemplazo rápido y seguro de pantallas dañadas.</p>
+      </div>
+      <div class="card">
+        <h3>Reparación de Batería</h3>
+        <p>Soluciones para baterías que no cargan o duran poco.</p>
+      </div>
+      <div class="card">
+        <h3>Problemas de Software</h3>
+        <p>Actualizaciones, limpieza de virus y optimización.</p>
+      </div>
+      <div class="card">
+        <h3>Diagnóstico General</h3>
+        <p>Revisión completa para detectar cualquier falla.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section class="process">
+    <h2>¿Cómo funciona nuestro servicio?</h2>
+    <div class="steps">
+      <div class="step">
+        <h3>1. Solicita tu reparación</h3>
+        <p>Contáctanos y dinos qué problema presenta tu dispositivo.</p>
+      </div>
+      <div class="step">
+        <h3>2. Recibe diagnóstico</h3>
+        <p>Te damos un análisis detallado y presupuesto claro.</p>
+      </div>
+      <div class="step">
+        <h3>3. Reparación rápida</h3>
+        <p>Tu equipo queda listo en el menor tiempo posible.</p>
+      </div>
+      <div class="step">
+        <h3>4. Garantía incluida</h3>
+        <p>Todos nuestros trabajos cuentan con garantía.</p>
+      </div>
+    </div>
+    <a href="contacto.html" class="btn">Solicitar reparación</a>
+  </section>
+
+  <!-- PRECIOS -->
+  <section class="prices">
+    <h2>Precios aproximados</h2>
+    <table>
+      <tr>
+        <th>Servicio</th>
+        <th>Precio</th>
+      </tr>
+      <tr>
+        <td>Cambio de pantalla</td>
+        <td>$850 - $1500</td>
+      </tr>
+      <tr>
+        <td>Reparación de batería</td>
+        <td>$950 - $2000</td>
+      </tr>
+      <tr>
+        <td>Problemas de software</td>
+        <td>$300 - $700</td>
+      </tr>
+      <tr>
+        <td>Diagnóstico general</td>
+        <td>$100</td>
+      </tr>
+    </table>
+  </section>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teléfonos - GUTICELL</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f4f6f9;
+      color: #333;
+    }
+    header {
+      background: #0a3d62;
+      color: #fff;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo img {
+      height: 50px;
+      width: auto;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav ul li a {
+      color: #fff;
+      font-weight: 500;
+      transition: color 0.3s;
+      text-decoration: none;
+    }
+    nav ul li a:hover { 
+        color: #f39c12;
+        text-decoration: none;
+    }
+
+    /* ====== FILTROS ====== */
+    .filters {
+      background: #fff;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .filters select, .filters input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1em;
+    }
+
+    /* ====== CATÁLOGO ====== */
+    .catalog {
+      padding: 40px 20px;
+    }
+    .catalog h1 {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      color: #0a3d62;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 18px rgba(0,0,0,0.2);
+    }
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card h3 {
+      margin: 0;
+      font-size: 1.3em;
+      color: #0a3d62;
+    }
+    .card p {
+      margin: 10px 0;
+      font-size: 1em;
+      color: #555;
+    }
+    .btn {
+      margin-top: auto;
+      padding: 12px;
+      background: #f39c12;
+      color: #fff;
+      border-radius: 25px;
+      font-weight: bold;
+      text-align: center;
+      transition: background 0.3s;
+      text-decoration: none;
+    }
+    .btn:hover { background: #e67e22; }
+
+    /* ====== RESPONSIVO ====== */
+    @media (max-width: 768px) {
+      .filters { flex-direction: column; align-items: center; }
+      .catalog h1 { font-size: 2em; }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <img src="logo/GUTICELL.png" alt="Logo GUTICELL">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="telefonos.html">Teléfonos</a></li>
+        <li><a href="accesorios.html">Accesorios</a></li>
+        <li><a href="reparaciones.html">Reparaciones</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- FILTROS -->
+  <section class="filters">
+    <select id="marca">
+      <option value="">Todas las marcas</option>
+      <option value="apple">Apple</option>
+      <option value="samsung">Samsung</option>
+      <option value="xiaomi">Xiaomi</option>
+      <option value="motorola">Motorola</option>
+    </select>
+    <select id="precio">
+      <option value="">Todos los precios</option>
+      <option value="low">Menos de $500</option>
+      <option value="mid">$500 - $800</option>
+      <option value="high">Más de $800</option>
+    </select>
+    <input type="text" id="busqueda" placeholder="Buscar modelo...">
+    <button onclick="filtrar()" class="btn">Filtrar</button>
+  </section>
+
+  <!-- CATÁLOGO -->
+  <section class="catalog">
+    <h1>Catálogo de Teléfonos</h1>
+    <div class="cards" id="catalogo">
+      <div class="card" data-marca="apple" data-precio="high">
+        <img src="TELEFONOS/1.png" alt="Xiaomi Redmi A5">
+        <div class="card-content">
+          <h3>Xiaomi Redmi A5</h3>
+          <p>Precio: $2,500</p>
+          <a href="contacto.html" class="btn">Solicitar información</a>
+        </div>
+      </div>
+      <div class="card" data-marca="samsung" data-precio="high">
+        <img src="TELEFONOS/2.png" alt="ZTE V60 Smart">
+        <div class="card-content">
+          <h3>ZTE V60 Smart</h3>
+          <p>Precio: $2,200</p>
+          <a href="contacto.html" class="btn">Solicitar información</a>
+        </div>
+      </div>
+      <div class="card" data-marca="xiaomi" data-precio="mid">
+        <img src="TELEFONOS/3.png" alt="Motorola Moto G05">
+        <div class="card-content">
+          <h3>Motorola Moto G05</h3>
+          <p>Precio: $2,500</p>
+          <a href="contacto.html" class="btn">Solicitar información</a>
+        </div>
+      </div>
+      <div class="card" data-marca="motorola" data-precio="low">
+        <img src="TELEFONOS/4.png" alt="Samsung A06">
+        <div class="card-content">
+          <h3>Samsung A06</h3>
+          <p>Precio: $2,200</p>
+          <a href="contacto.html" class="btn">Solicitar información</a>
+        </div>
+      </div>
+      <div class="card" data-marca="motorola" data-precio="low">
+        <img src="TELEFONOS/5.png" alt="ZTE V70 MAX">
+        <div class="card-content">
+          <h3>ZTE V70 MAX</h3>
+          <p>Precio: $2,300</p>
+          <a href="contacto.html" class="btn">Solicitar información</a>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+
+  <script>
+    function filtrar() {
+      const marca = document.getElementById('marca').value;
+      const precio = document.getElementById('precio').value;
+      const busqueda = document.getElementById('busqueda').value.toLowerCase();
+      const cards = document.querySelectorAll('.card');
+
+      cards.forEach(card => {
+        const cardMarca = card.getAttribute('data-marca');
+        const cardPrecio = card.getAttribute('data-precio');
+        const titulo = card.querySelector('h3').textContent.toLowerCase();
+
+        let visible = true;
+
+        if (marca && cardMarca !== marca) visible = false;
+        if (precio && cardPrecio !== precio) visible = false;
+        if (busqueda && !titulo.includes(busqueda)) visible = false;
+
+        card.style.display = visible ? 'flex' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>

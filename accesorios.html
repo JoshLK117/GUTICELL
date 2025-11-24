@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accesorios - GUTICELL</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f4f6f9;
+      color: #333;
+    }
+    header {
+      background: #0a3d62;
+      color: #fff;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo img {
+      height: 50px;
+      width: auto;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav ul li a {
+      color: #fff;
+      font-weight: 500;
+      transition: color 0.3s;
+      text-decoration: none; /* sin subrayado */
+    }
+    nav ul li a:hover { color: #f39c12; }
+
+    /* ====== FILTROS ====== */
+    .filters {
+      background: #fff;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .filters select, .filters input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1em;
+    }
+
+    /* ====== CATÁLOGO ====== */
+    .catalog {
+      padding: 40px 20px;
+    }
+    .catalog h1 {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      color: #0a3d62;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 18px rgba(0,0,0,0.2);
+    }
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card h3 {
+      margin: 0;
+      font-size: 1.3em;
+      color: #0a3d62;
+    }
+    .card p {
+      margin: 10px 0;
+      font-size: 1em;
+      color: #555;
+    }
+    .btn {
+      margin-top: auto;
+      padding: 12px;
+      background: #f39c12;
+      color: #fff;
+      border-radius: 25px;
+      font-weight: bold;
+      text-align: center;
+      transition: background 0.3s;
+      text-decoration: none;
+    }
+    .btn:hover { background: #e67e22; }
+
+    /* ====== RESPONSIVO ====== */
+    @media (max-width: 768px) {
+      .filters { flex-direction: column; align-items: center; }
+      .catalog h1 { font-size: 2em; }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <img src="logo/GUTICELL.png" alt="Logo GUTICELL">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="telefonos.html">Teléfonos</a></li>
+        <li><a href="accesorios.html">Accesorios</a></li>
+        <li><a href="reparaciones.html">Reparaciones</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- FILTROS -->
+  <section class="filters">
+    <select id="categoria">
+      <option value="">Todas las categorías</option>
+      <option value="fundas">Fundas y protectores</option>
+      <option value="audio">Audífonos y bocinas</option>
+      <option value="carga">Cargadores y cables</option>
+      <option value="smartwatch">Smartwatches</option>
+    </select>
+    <input type="text" id="busqueda" placeholder="Buscar accesorio...">
+    <button onclick="filtrar()" class="btn">Filtrar</button>
+  </section>
+
+  <!-- CATÁLOGO -->
+  <section class="catalog">
+    <h1>Catálogo de Accesorios</h1>
+    <div class="cards" id="catalogo">
+      <div class="card" data-categoria="fundas">
+        <img src="catalogo/IP_cargador_1hora.jpg" alt="Cargador Combo IP 2.4A 1hora">
+        <div class="card-content">
+          <h3>Cargador Combo IP 2.4A 1Hora</h3>
+          <p>Precio: $130</p>
+          <a href="contacto.html" class="btn">Solicitar información</a>
+        </div>
+      </div>
+      <div class="card" data-categoria="audio">
+        <img src="catalogo/combo_cargador_IP.jpg" alt="Conbocargador IP 1Hora">
+        <div class="card-content">
+          <h3>Combo cargador IP 1Hora</h3>
+          <p>Precio: $100</p>
+          <a href="contacto.html" class="btn">Solicitar información</a>
+        </div>
+      </div>
+      <div class="card" data-categoria="carga">
+        <img src="catalogo/kbod_ip.webp" alt="KBOD IP">
+        <div class="card-content">
+          <h3>USB Cargador KBOD IP</h3>
+          <p>Precio: $150</p>
+          <a href="contacto.html" class="btn">Solicitar información</a>
+        </div>
+      </div>
+      <div class="card" data-categoria="smartwatch">
+        <img src="catalogo/buku_bocina.webp" alt="Bocina Buku">
+        <div class="card-content">
+          <h3>Bocina Buku</h3>
+          <p>Precio: $120</p>
+          <a href="contacto.html" class="btn">Solicitar información</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function filtrar() {
+      const categoria = document.getElementById('categoria').value;
+      const busqueda = document.getElementById('busqueda').value.toLowerCase();
+      const cards = document.querySelectorAll('.card');
+
+      cards.forEach(card => {
+        const cardCategoria = card.getAttribute('data-categoria');
+        const titulo = card.querySelector('h3').textContent.toLowerCase();
+
+        let visible = true;
+
+        if (categoria && cardCategoria !== categoria) visible = false;
+        if (busqueda && !titulo.includes(busqueda)) visible = false;
+
+        card.style.display = visible ? 'flex' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
